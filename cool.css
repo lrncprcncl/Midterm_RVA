@@ -1,0 +1,158 @@
+body {
+    background: rgb(213, 214, 228);
+}
+
+abstract {
+    --s : 80vmin;
+    display: block;
+    box-sizing: border-box;
+    width: var(--s);
+    aspect-ratio: 1;
+    background: #01266b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 calc(0.0125 * var(--s)) calc(0.075 * var(--s)) calc(-0.025 * var(--s));
+}
+
+abstract * {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  base {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #b3e5d9 48%, rgb(0, 17, 17) 0);
+    clip-path: polygon(35% 90.48%, 35% 75.50%, 48% 65.77%, 58.31% 72.50%, 51.70% 72.50%, 51.70% 75.21%, 61.43% 75.21%, 61.43% 79.85%, 50.71% 79.85%, 50.71% 84.09%, 59.23% 84.09%, 59.23% 90.48%);
+  }
+
+  dot {
+    width: 2.5%;
+    aspect-ratio: 1;
+    background: #000;
+    box-shadow: 0 0 calc(var(--s) * 0.02) rgba(0, 0, 0, 0.333);
+    border-radius: 50%;
+    top: 30.75%;
+    left: 55.5%;
+  }
+
+  circle {
+    width: 47.5%;
+    aspect-ratio: 1;
+    background: rgba(4, 0, 255, 0.267);
+    border-radius: 50%;
+    bottom: 34.23%;
+    left: 48%;
+    transform: translateX(-50%);
+    clip-path: polygon(42% 0, 100% 0, 100% 100%, 42% 100%);
+    background: conic-gradient(#74bbb1 25%, #84bca6 0 50%, #1a879a 0 75%, #b3bce5 0)
+  }
+
+  circle + circle {
+    clip-path: polygon(0 0, 32.25% 0, 32.25% 100%, 0% 100%);
+    left: 56.5%;
+    bottom: 44.5%;
+    background: #6260de;
+    mix-blend-mode: hard-light;
+  }
+
+  line {
+    right: 52%;
+    top: 60%;
+    height: 2.1%;
+    width: 13%;
+    background: rgb(0, 1, 17);
+    mix-blend-mode: multiply;
+  }
+
+  line + line {
+    width: 18.5%;
+    height: 0.7%;
+    top: 57%;
+    background: #35167d;
+    mix-blend-mode: difference;
+  }
+
+  box {
+    width: 3%;
+    height: 5%;
+    background: #498175;
+    bottom: 4.5%;
+    left: 20.5%;
+  }
+
+  shape {
+    top: 3%;
+    left: 73%;
+    width: 7%;
+    height: 17%;
+    border-left: calc(var(--s) * 0.01) solid #000;
+    border-bottom: calc(var(--s) * 0.01) solid #000;
+    background: linear-gradient(#000 0 0) 0 43% / 75% 12% no-repeat
+  }
+
+  shape::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 25%;
+    height: 4%;
+    width: 120%;
+    background: #b4b3e5;
+  }
+  
+  .button{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4em;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    padding: 0.8em 1.8em;
+    cursor:pointer;
+    user-select:none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  }
+  
+  .button:hover {
+    transition-duration: 0.1s;
+    background-color: #e4e4e4;
+  }
+  
+  .button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px white;
+  }
+  
+  .button:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+  }
+  
+  .button:active {
+    top: 1px;
+  }
+
+  .center {
+    text-align: center;
+  }
